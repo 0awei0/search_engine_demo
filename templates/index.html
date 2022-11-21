@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../static/jquery.js"></script>
+    <script src="../static/get_hint_list.js"></script>
+    <link rel="stylesheet" type="text/css" href="../static/style.css" media="all">
+    <link rel="shortcut icon" href="../static/images/googlelogo2.png" type="image/x-icon">
+</head>
+
+<body>
+<header>
+    <p>Gmail</p>
+    <p>Images</p>
+    <img src=../static/images/menu.png class="menu" alt="">
+    <img src=../static/images/name.png class="name" alt="">
+</header>
+
+<form method="post">
+    <main>
+        <div id="logo">
+            <img src=../static/images/googlelogo1.png class="logo" alt="">
+        </div>
+        <div class="searchbar">
+            <img src=../static/images/search.png class="mg" alt="">
+            <label for="search">
+                <input type="search" class="search" name="search_info" id="search" placeholder="search"
+                       autocomplete="off" oninput="send_info()">
+            </label>
+            <img src=../static/images/microphone.png class="mcp" alt="">
+        </div>
+        <ul class="hint-list" id="hint_list" style="display: block"></ul>
+    </main>
+</form>
+
+</body>
+
+<script>
+    //取变量
+    let input = document.querySelector('input');
+    let ul = document.querySelector('.hint-list');
+
+    //2.注册事件
+    //onfocus:成为焦点, 点击输入框的时候，出现闪烁光标，此时可以输入内容
+    input.onfocus = function () {
+        console.log('点击了，出现光标了，此时可以输入文字');
+        //(1)显示ul
+        ul.style.display = 'block';
+        //(2)自身边框改变 （通过新增search类名）
+        this.classList.add('search');
+    }
+    /*
+        //onblur :失去焦点, 点击页面空白区域，光标消失。此时不可以输入内容
+        input.onblur = function () {
+            console.log('点其他地方了，光标消失了，此时不可以输入文字');
+            //隐藏ul
+            ul.style.display = 'none';
+            //自身边框改变 （通过移除search类名）
+            this.classList.remove('search');
+        }
+    */
+</script>
+</html>

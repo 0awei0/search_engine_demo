@@ -1,0 +1,13 @@
+urllib3==1.26.4
+simhash==2.1.2
+PyMySQL==1.0.2
+redis==3.5.3
+pandas==1.4.1
+numpy==1.22.3
+jieba==0.42.1
+feapder==1.7.9
+Flask==2.2.2
+gensim==3.8.3
+tqdm==4.63.1
+networkx==2.3
+scikit_learn==1.1.3
